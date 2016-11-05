@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sCAAsC;AAGtC,2CAA2C",
+"sources": ["../sass/wysiwyg.scss"],
+"names": [],
+"file": "wysiwyg.css"
+}
