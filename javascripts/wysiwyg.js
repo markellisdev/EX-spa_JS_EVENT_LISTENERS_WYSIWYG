@@ -3,7 +3,7 @@
 // Create an array of objects that represents famous people.
 var person = [
 	{
-		title: Entrepreneur,
+		title: "Entrepreneur",
 		name: "Tim Ferriss",
 		bio: "Tim is an American author, entrepreneur and public speaker. He has written a number of self-help books which have appeared on the New York Times, Wall Street Journal, and USA Today",
 		image: "https://blog.bulletproof.com/wp-content/uploads/2015/04/tim_ferriss.jpg",
