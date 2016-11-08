@@ -1,4 +1,68 @@
 /* ------------- IDs -------------- */
+p {
+	max-width: 90%;
+	max-height: 90%;
+	margin: 8px;
+}
 
+.blueBack {
+	background-color: lightblue;
+}
+
+.yellowBack {
+	background-color: lightyellow;
+}
+
+#container {
+	width: 100%;
+}
+
+#textInput {
+	width: 50%;
+	min-height: 300px;
+}
+
+#dotBorder {
+	border: 2px dotted black;
+
+}
 
 /* ------------- CLASSES --------------- */
+.card {
+	width: 30%;
+	border: 2px solid black;
+	display: inline-block;
+}
+
+.cardHeader {
+	background-color: lightgrey;
+	width: 100%;
+	min-height: 50px;
+}
+
+.cardTitle {
+	min-width: 50%;
+	display: inline-block;
+}
+
+.cardName {
+	min-width: 50%;
+	display: inline-block;
+}
+
+.cardBio {
+	/*border: 1px solid red;*/
+	width: 100%;
+	min-height: 300px;
+}
+
+.cardImg {
+	max-width: 100px;
+	max-height: 60px;
+}
+
+.cardFooter {
+	background-color: lightgrey;
+	width: 100%;
+	min-height: 100px;
+}
