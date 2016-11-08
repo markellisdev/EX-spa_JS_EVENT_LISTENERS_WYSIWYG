@@ -71,10 +71,10 @@ var createCards = (function(onPageLoad) {
 	var colorClass;
 
 	if (i % 2 === 0) {
-		colorClass="yellowBack";
+		colorClass="blueBack";
 	}
 	else {
-		colorClass="blueBack";
+		colorClass="yellowBack";
 	}
 
 	var newCard =
@@ -84,9 +84,9 @@ var createCards = (function(onPageLoad) {
 		</header>
 		<div class="cardBio">
 			<img class="cardImg" src="${person[i].image}" alt= person[i].name + "'s photo" />
-			<p class="bio"></p>
+			<p class="bio">${person[i].bio}</p>
 		</div>
-		<footer class="cardFooter"></footer>
+		<footer class="cardFooter">${person[i].lifespan.birth}: ${person[i].lifespan.death}</footer>
 		`;
 
 	var cardDiv = document.createElement("div");
@@ -99,6 +99,10 @@ var createCards = (function(onPageLoad) {
 
 		cardDiv.addEventListener("click", function(event) {
 			console.log("event current target", event.currentTarget.querySelector(".bio"));
+			console.log("event current target", event.currentTarget);
+
+			var dotted = event.currentTarget;
+			dotted.classList.toggle("dotBorder");
 
 			var clicked = event.currentTarget.querySelector(".bio");
 
@@ -141,5 +145,8 @@ textIn.addEventListener("keyup", function(event) {
 	console.log("13", event );
 		document.getElementById("textInput").value="";
 		document.getElementById("textInput").blur();
+		var dotted = document.getElementsByClassName("dotBorder");
+		console.log("dotted", dotted);
+		dotted.classList.toggle("dotBorder");
 	}
 });

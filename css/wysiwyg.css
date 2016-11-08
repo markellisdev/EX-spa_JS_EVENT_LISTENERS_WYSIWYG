@@ -15,21 +15,24 @@ p {
 
 #textInput {
   width: 50%;
-  min-height: 300px; }
-
-#dotBorder {
-  border: 2px dotted black; }
+  min-height: 300px;
+  margin: 1.5rem; }
 
 /* ------------- CLASSES --------------- */
 .card {
   width: 30%;
-  border: 2px solid black;
-  display: inline-block; }
+  border: 2px solid lightblue;
+  display: inline-block;
+  margin: 10px; }
+
+.dotBorder {
+  border: 2px dotted black; }
 
 .cardHeader {
   background-color: lightgrey;
   width: 100%;
-  min-height: 50px; }
+  min-height: 50px;
+  text-align: center; }
 
 .cardTitle {
   min-width: 50%;
@@ -51,6 +54,8 @@ p {
 .cardFooter {
   background-color: lightgrey;
   width: 100%;
-  min-height: 100px; }
+  min-height: 50px;
+  word-wrap: break-word;
+  text-align: center; }
 
 /*# sourceMappingURL=wysiwyg.css.map */
