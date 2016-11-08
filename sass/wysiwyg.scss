@@ -20,24 +20,29 @@ p {
 #textInput {
 	width: 50%;
 	min-height: 300px;
+	margin: 1.5rem;
 }
 
-#dotBorder {
-	border: 2px dotted black;
 
-}
 
 /* ------------- CLASSES --------------- */
 .card {
 	width: 30%;
-	border: 2px solid black;
+	border: 2px solid lightblue;
 	display: inline-block;
+	margin: 10px;
+}
+.dotBorder {
+	border: 2px dotted black;
+
 }
 
 .cardHeader {
 	background-color: lightgrey;
 	width: 100%;
 	min-height: 50px;
+	text-align: center;
+
 }
 
 .cardTitle {
@@ -64,5 +69,7 @@ p {
 .cardFooter {
 	background-color: lightgrey;
 	width: 100%;
-	min-height: 100px;
+	min-height: 50px;
+	word-wrap: break-word;
+	text-align: center;
 }
