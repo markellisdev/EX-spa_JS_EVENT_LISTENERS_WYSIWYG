@@ -1,4 +1,7 @@
 "use strict";
+/*jshint loopfunc: true */
+
+/* -------------- VARs ---------------*/
 
 // Create an array of objects that represents famous people.
 var person = [
@@ -12,7 +15,7 @@ var person = [
 			death: undefined,
 		}
 
-	}
+	},
 
 	{
 		title: "Security Researcher",
@@ -24,7 +27,7 @@ var person = [
 			death: undefined,
 		}
 
-	}
+	},
 
 	{
 		title: "Hothead",
@@ -36,7 +39,7 @@ var person = [
 			death: undefined,
 		}
 
-	}
+	},
 
 	{
 		title: "Stoic Philosopher",
@@ -48,5 +51,95 @@ var person = [
 			death: "65 AD",
 		}
 
+	},
+];
+
+var textIn = document.getElementById("textInput");
+
+var counter = 1;
+
+
+/* -------------- FUNCTIONs ---------------*/
+
+var createCards = (function(onPageLoad) {
+
+	var numPersons = person.length;
+
+	for (var i = 0; i < numPersons; i++) {
+		console.log("i", i , person[i].name );
+
+	var colorClass;
+
+	if (i % 2 === 0) {
+		colorClass="yellowBack";
 	}
-]
+	else {
+		colorClass="blueBack";
+	}
+
+	var newCard =
+		`<header class="cardHeader">
+			<div class="cardTitle"><strong>${person[i].title}</strong>: ${person[i].name}
+			</div>
+		</header>
+		<div class="cardBio">
+			<img class="cardImg" src="${person[i].image}" alt= person[i].name + "'s photo" />
+			<p class="bio"></p>
+		</div>
+		<footer class="cardFooter"></footer>
+		`;
+
+	var cardDiv = document.createElement("div");
+		cardDiv.setAttribute("class", `card ${colorClass}`);
+		cardDiv.setAttribute("target", "card");
+
+
+		cardDiv.innerHTML = newCard;
+		cardDiv.id = i+1;
+
+		cardDiv.addEventListener("click", function(event) {
+			console.log("event current target", event.currentTarget.querySelector(".bio"));
+
+			var clicked = event.currentTarget.querySelector(".bio");
+
+			document.getElementById("textInput").focus();
+			document.getElementById("textInput").focus();
+
+			var clickToType = event.currentTarget.querySelector("p");
+
+			// clickToType.setAttribute("style", "border: 2px dotted black;");
+
+			console.log("click to type", clickToType.innerHTML);
+			textToBio(clickToType);
+		});
+
+	document.getElementById("container").appendChild(cardDiv);
+
+	}
+})();
+
+
+//person elements .addEventListener("click", function(event) {
+//	text input field highlights; &
+//	add dotted border;
+//})
+
+
+//bio = text input .value when typing
+
+function textToBio(clickToType) {
+	console.log("textToBio function", clickToType.innerHTML);
+	textIn.addEventListener("keydown", function(event) {
+		clickToType.innerHTML = document.getElementById("textInput").value;
+	});
+}
+
+//input field .addEventListener keyup, if("keyCode == 13"), remove text from field and remove focus (blur())
+
+textIn.addEventListener("keyup", function(event) {
+	if (event.keyCode == 13) {
+	console.log("13", event );
+		document.getElementById("textInput").value="";
+		document.getElementById("textInput").blur();
+	}
+});
